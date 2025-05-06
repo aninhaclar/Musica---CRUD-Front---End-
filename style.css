@@ -1,0 +1,163 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+ul, ol, li{
+    list-style: none;
+}
+
+body{
+    padding: 64px;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+    /* Fazer linha */
+    border-bottom: 1px solid red;
+    padding-bottom: 32px
+}
+header img{
+    height: 48px;
+}
+header input{
+    height: 48px;
+    flex-grow: 1;
+    padding: 0 12px;
+    border: 1px solid red;
+    outline: none; /* Tirar linha quando estiver com foco */
+    border-radius: 4px;
+}
+.button{
+    display: none;
+    height: 48px;
+    min-width: 100px;
+    background-color: red;
+    color: white;
+    padding: 0 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button.show{
+    display: block;
+}
+
+.button.verde {
+    background-color: green;
+}
+
+.button.azul {
+    background-color: blue;
+}
+
+.button.preto {
+    background-color: black;
+}
+
+main{
+    padding-top: 32px;
+}
+
+.container{
+    display: none;
+    flex-wrap: wrap;
+    gap: 32px;
+}
+/* Liga e desliga*/
+main.card-show .container{
+    display: none;
+}
+
+.card-contato{
+    height: 300px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 2px 2px 8px #0004;
+    border-radius: 8px;
+    border-bottom: 32px solid red; /* Fazer borda só em baixo*/
+}
+.card-contato img{
+    height: 160px;
+    border-radius: 50%;
+    border: 4px solid red;
+}
+
+form {
+    /* background-color: aquamarine; */
+    width: 80%; /*Altura*/
+    margin: auto; /*Centraliza*/
+    display: none;
+    flex-wrap: wrap;
+    gap: 32px;
+    padding: 32px;
+}
+
+main.form-show form{
+    display: flex;
+
+}
+
+.preview{
+  position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 4px solid red;
+    overflow: hidden;
+}
+
+.preview-input {
+    display: none;
+}
+
+.preview-label {
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.preview-image {
+    height: 100%;
+    width: 100%;
+}
+
+.input-container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.input {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-text {
+    height: 38px;
+    border: 1px solid red;
+    border-radius: 2px;
+    outline: none;
+    padding-left: 8px;
+}
+
+.button-container {
+    width: 100%;
+    /* background-color: gold; */
+    display: flex;
+    justify-content: space-evenly;
+}

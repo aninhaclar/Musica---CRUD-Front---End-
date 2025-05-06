@@ -3,10 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="main.js"></script>
-    <title>CRUD - musica</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./js/main.js" defer type="module"></script> <!-- É necessário que seja type= module para exportar uma função de um arquivo para o outro -->
+    <title>CRUD FRONTEND</title>
 </head>
 <body>
-    
+    <header>
+        <img src="./img/logo_senai.png" alt="Logo Senai">
+        <input type="text" id="nome-contato" placeholder="Digite o nome do contato">
+        <button class="button" id="novo contato">Novo Contato</button>
+    </header>
+    <main class="form-show">
+        <div class="container" id="container"></div>
+        <form>
+            <div class="preview">
+                <input class="preview-input" type="file" accept="image/*">
+                <label class="preview-label" for ="foto"></label>
+                <img class="preview-image" id="preview-image" >
+            </div>
+            <div class="input-container">
+                <div class="input">
+                    <label>Nome:</label>
+                    <input type="text" class="input-text" id="nome">
+                </div>
+                <div class="input">
+                    <div class="input">
+                        <label>email:</label>
+                        <input type="text" class="input-text" id="email">
+                    </div>
+                    <div class="input">
+                        <label>Celular:</label>
+                        <input type="text" class="input-text" id="Celular">
+                    </div>
+                </div><div class="input">
+                    <label>Endereço:</label>
+                    <input type="text" class="input-text" id="telefone">
+                </div>
+                    <label>Cidade:</label>
+                    <input type="text" class="input-text" id="endereco">
+                </div>
+                <div class="button-container">
+                    <button type="button" class="button azul" id="editar">Editar</button>
+                    <button type="button" class="button " id="deletar">Deletar</button>
+                    <button type="button" class="button show" id="salvar">Salvar</button>
+                    <button type="button" class="button show" id="cancelar">Cancelar</button>
+
+                </div>
+            </div>
+        </form>
+    </main>
 </body>
 </html>

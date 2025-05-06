@@ -1,9 +1,9 @@
 'use strict'
 
-// Pegar/Ler os contatos
-async function getMusica() {
 
-    const url = `http://localhost:8080/v1/controle-musicas/musicaLista`
+export async function getContatos() {
+
+    const url = `https://bakcend-fecaf-render.onrender.com/contatos`
 
     const response = await fetch(url)
 
@@ -12,21 +12,11 @@ async function getMusica() {
     return data
 }
 
+export async function getContatosPorNome(nome) {
 
-async function getMusicaFiltro() {
+    const url = `https://bakcend-fecaf-render.onrender.com/contatos?nome_like=^${nome}`
 
-    const url = `http://localhost:8080/v1/controle-musicas/musicaFiltroID/${id}`
-    
-    const options = {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(musica) 
-    }
-
-
-    const response = await fetch(url, options)
+    const response = await fetch(url)
 
     const data = await response.json()
     console.log(data)
@@ -34,16 +24,16 @@ async function getMusicaFiltro() {
 }
 
 // Criar novo contato
-async function postMusica(musica){
+async function postContato(contato){
     // Quando a URL está fora, ou a função recebe algo que não é via params ela não é pura
-    const url = `http://localhost:8080/v1/controle-musicas/musica`
+    const url = `https://bakcend-fecaf-render.onrender.com/contatos`
 
     const options = {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(musica) 
+        body: JSON.stringify(contato) 
     }
 
     const response = await fetch(url, options)
@@ -53,16 +43,16 @@ async function postMusica(musica){
 }
 
 // Atualizar contato existente buscando pelo ID
-async function putMusicas(musica, id){
+async function putContato(contato, id){
 
-    const url = `http://localhost:8080/v1/controle-musicas/musica/${id}`
+    const url = `https://bakcend-fecaf-render.onrender.com/contatos/${id}`
 
     const options = {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(musica) 
+        body: JSON.stringify(contato) 
     }
 
     const response = await fetch(url, options)
@@ -74,7 +64,7 @@ async function putMusicas(musica, id){
 // Deletar um contato pelo ID
 async function deleteContato(id){
     
-    const url = `http://localhost:8080/v1/controle-musicas/musica/${id}`
+    const url = `https://bakcend-fecaf-render.onrender.com/contatos/${id}`
 
     const options = {
         method: 'DELETE'
@@ -85,11 +75,13 @@ async function deleteContato(id){
     return response.ok
 }
 
-const musicaNova = {
-    "nome": "Ana Pires",
-    "celular": "11 9 8654-6264",
-    "foto": "../img/ana-oliveira-dias.png",
-    "email": "arimualdopires@gmail.com",
-    "endereco": "Av. Anibal Correia, 193",
-    "cidade": "Barueri"
+const contatoNovo = {
+    "nome": "Letícia Souza ALmeida",
+    "celular": "11 97551-0000",
+    "foto": "leticia.png",
+    "email": "lets.123@gmail.com",
+    "endereco": "Av. Paulista N°244",
+    "cidade": "São Paulo"
 }
+
+export { postContato as postContato }
